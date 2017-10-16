@@ -1,23 +1,45 @@
-#canvas {
-  display: block;
-  float: left;
+body{
+display: block;
+height: 100vh;
+}
+main{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   border-style: solid;
-  border-color: black;
-  border-width: 1px
+  border-color: LightGray;
+  border-width: .25px;
   background-color: white;
-  width: 100%;
-  height:455px;
-  margin-bottom: 11.1%;
+  margin: auto;
+  width: 60%;
+  height: 65vh;
+  padding: 10px;
+  margin-bottom:20px;
+  overflow: auto;
 }
 
 #paints {
   display: block;
-  float: left;
   border-style: solid;
-  border-color: black;
-  border-width: 1px
+  border-color: LightGray;
+  border-width: .25px;
   background-color: white;
   width: 100%;
-  height:455px;
-  margin-bottom: 11.1%;
+  height: 40vh;
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+
+.circle{
+  border-radius: 75%
+}
+
+#myColor {
+  display: block;
+  justify-content: center;
+  clear: right;
+  font-family: Helvetica;
+  font-variant: small-caps;
 }
