@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
   // Your JS goes here
   var pickedColor = 'white';
-  let colors = ['white', 'black', 'blue', 'red', 'green', 'AntiqueWhite', 'Beige', 'CadetBlue', 'DarkSeaGreen '];
+  let colors = ['white', 'black', 'blue', 'red', 'green', 'AntiqueWhite', 'Beige', 'CadetBlue', 'DarkSeaGreen', 'azure', 'blueviolet', 'darkorange'];
   var paints = document.getElementById('paints');
   var body = document.getElementsByTagName('body')[0];
   var main = document.getElementsByTagName('main')[0];
@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
     div.style.backgroundColor = "white";
     div.style.borderColor = 'beige';
     div.style.borderStyle = 'solid';
-    div.style.borderWidth = '.25px'
+    div.style.borderWidth = '.25px';
+    div.className = "paintArea"
     main.appendChild(div)
   }
 
@@ -43,7 +44,16 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log(event.target.style.backgroundColor);
   }
 
-  main.addEventListener("click", myDrawer);
+  main.addEventListener("mousedown", draw);
+  main.addEventListener("mouseup", stopDraw);
+
+function stopDraw(){
+    console.log('The mouse is up');
+    main.removeEventListener("mousedown", draw);
+  };
+
+  function draw(){
+  main.addEventListener("mousemove", myDrawer)}
 
   function myDrawer(event) {
     event.target.style.backgroundColor = pickedColor;
