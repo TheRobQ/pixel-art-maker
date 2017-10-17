@@ -1,18 +1,20 @@
 document.addEventListener("DOMContentLoaded", function() {
   // Your JS goes here
   var pickedColor = 'white';
-  let colors = ['white', 'black', 'blue', 'red', 'green', 'AntiqueWhite', 'Beige', 'CadetBlue', 'DarkSeaGreen', 'azure', 'blueviolet', 'darkorange'];
+  let colors = ['white', 'black', 'blue', 'red', 'green', 'AntiqueWhite', 'Beige', 'CadetBlue', 'DarkSeaGreen', 'azure', 'blueviolet', 'darkorange', 'goldenrod', 'greenyellow', 'honeydew', 'lemonchiffon', 'palevioletred', 'slategray', 'thistle'];
+
   var paints = document.getElementById('paints');
   var body = document.getElementsByTagName('body')[0];
   var main = document.getElementsByTagName('main')[0];
   var myColor = document.getElementById("myColor");
+  var drawingNow = false;
 
   for (var i = 0; i < 1827; i++) {
     var div = document.createElement('div');
     div.style.float = 'left';
     div.style.paddingBottom = '1.5%';
     div.style.width = '1.5%';
-    div.style.height = 'auto';
+    div.style.maxHeight = '1.5%';
     div.style.backgroundColor = "white";
     div.style.borderColor = 'beige';
     div.style.borderStyle = 'solid';
@@ -36,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function() {
     paints.appendChild(div)
   }
 
-  paints.addEventListener("click", myPicker);
 
   function myPicker(event) {
     pickedColor = event.target.style.backgroundColor;
@@ -44,20 +45,22 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log(event.target.style.backgroundColor);
   }
 
-  main.addEventListener("mousedown", draw);
-  main.addEventListener("mouseup", stopDraw);
-
-function stopDraw(){
+  function stopDraw() {
     console.log('The mouse is up');
-    main.removeEventListener("mousedown", draw);
+    drawingNow = false;
   };
 
-  function draw(){
-  main.addEventListener("mousemove", myDrawer)}
-
-  function myDrawer(event) {
-    event.target.style.backgroundColor = pickedColor;
-    console.log(event.target.style.backgroundColor);
+  function draw() {
+    console.log('The mouse is down')
+    drawingNow = true;
   }
 
+  paints.addEventListener("click", myPicker);
+  main.addEventListener("mouseup", stopDraw);
+  main.addEventListener("mousedown", draw);
+  main.addEventListener("mousemove", function(event){
+    if(drawingNow === true){
+      event.target.style.backgroundColor = pickedColor;
+    }
+  })
 })
