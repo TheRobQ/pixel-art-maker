@@ -22,7 +22,9 @@ main{
 }
 
 header{
-    height: 15vh;
+    height: 10vh;
+    maring-bottom: -10px;
+
 }
 #paints {
   display: block;
