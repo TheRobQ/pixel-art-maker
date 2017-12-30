@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Your JS goes here
   var pickedColor = 'white';
   let colors = ['white', 'black', 'blue', 'red', 'green', 'AntiqueWhite', 'Beige', 'CadetBlue', 'DarkSeaGreen', 'azure', 'blueviolet', 'darkorange', 'goldenrod', 'greenyellow', 'honeydew', 'lemonchiffon',
-  'palevioletred', 'slategray', 'thistle', 'BlueViolet', 'LavenderBlush', 'LightCyan', 'LightSkyBlue', 'PapayaWhip'];
+  'palevioletred', 'slategray', 'thistle', 'BlueViolet', 'LavenderBlush', 'LightCyan', 'LightSkyBlue', 'PapayaWhip', 'olive', 'OliveDrab', 'Peru', 'Tomato', 'WhiteSmoke', 'Tan'];
 
   var paints = document.getElementById('paints');
   var body = document.getElementsByTagName('body')[0];
