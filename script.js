@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
   // Your JS goes here
   var pickedColor = 'white';
-  let colors = ['white', 'black', 'blue', 'red', 'green', 'AntiqueWhite', 'Beige', 'CadetBlue', 'DarkSeaGreen', 'azure', 'blueviolet', 'darkorange', 'goldenrod', 'greenyellow', 'honeydew', 'lemonchiffon', 'palevioletred', 'slategray', 'thistle'];
+  let colors = ['white', 'black', 'blue', 'red', 'green', 'AntiqueWhite', 'Beige', 'CadetBlue', 'DarkSeaGreen', 'azure', 'blueviolet', 'darkorange', 'goldenrod', 'greenyellow', 'honeydew', 'lemonchiffon',
+  'palevioletred', 'slategray', 'thistle', 'BlueViolet', 'LavenderBlush', 'LightCyan', 'LightSkyBlue', 'PapayaWhip'];
 
   var paints = document.getElementById('paints');
   var body = document.getElementsByTagName('body')[0];
@@ -46,12 +47,12 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function stopDraw() {
-    console.log('The mouse is up');
+    //console.log('The mouse is up');
     drawingNow = false;
   };
 
   function draw() {
-    console.log('The mouse is down')
+    //console.log('The mouse is down')
     drawingNow = true;
   }
 
